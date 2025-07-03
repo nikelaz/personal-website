@@ -1,0 +1,60 @@
+@reference "tailwindcss";
+
+@layer components {
+  .hamburger {
+    width: 35px;
+    height: 23px;
+    position: absolute;
+    top: 0.845rem;
+    right: 0;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    @apply mr-4;
+  }
+
+  .hamburger .hamburger-line {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    border-radius: 1px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+    @apply bg-neutral-100;
+  }
+
+  .hamburger .hamburger-line:nth-child(1) {
+    top: 0px;
+  }
+
+  .hamburger .hamburger-line:nth-child(2),.hamburger .hamburger-line:nth-child(3) {
+    top: 10px;
+  }
+
+  .hamburger .hamburger-line:nth-child(4) {
+    top: 20px;
+  }
+
+  .hamburger.is-open .hamburger-line:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+
+  .hamburger.is-open .hamburger-line:nth-child(2) {
+    transform: rotate(45deg);
+  }
+
+  .hamburger.is-open .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
+  .hamburger.is-open .hamburger-line:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+}
