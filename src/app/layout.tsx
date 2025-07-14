@@ -26,7 +26,7 @@ const RootLayout = (props: ChildrenProps) => {
         className={`${fontLora.variable} ${fontIBMPlexSans.className} antialiased`}
       >
         <Header />
-        <main className="pt-12 pb-15">
+        <main>
           {props.children}
         </main>
         <Footer />

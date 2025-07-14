@@ -10,7 +10,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 py-3 z-1 bg-neutral-950/30 border-b-1 border-neutral-700/50 backdrop-blur-md">
+    <header className="sticky top-0 py-3 z-10 bg-neutral-950/30 border-b-1 border-neutral-700/50 backdrop-blur-md">
       <Container className="">
         <div className="w-full flex flex-wrap flex-col md:flex-row items-start md:items-center justify-between md:gap-4">
           <Logo />
