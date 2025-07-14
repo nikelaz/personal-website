@@ -4,86 +4,108 @@ const Article = () => {
   return (
     <>
       <h1>The Reasoning Mirage: Why AI Models Might Just Be Really Good at Pretending</h1>
-      <p>Researchers at Apple released a paper called "The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity" <sup><a href="#reference-1">[1]</a></sup>. Their research focuses on evaluating how reasoning models compare to ordinary Large Language Models (LLMs) when put through puzzle reasoning benchmarks with scalable complexity. The results are interesting.</p>
-      <h2>LLMs and Large Reasoning Models (LRMs)</h2>
-      <p>LLMs are sophisticated mathematical functions that use weighted parameters to predict the most likely next word based on context. LRMs perform additional reasoning before generating their final output. They use structured reasoning methodologies to evaluate and refine their responses. This methodology should increase their accuracy, particularly when tackling more complex problems.</p>
-      <p>Conventional benchmarks show that reasoning models are in fact better at the benchmarks and even exceed PhD-level accuracy on solutions in some fields:</p>
-      <blockquote>
-        <p>OpenAI o1 ranks in the 89th percentile on competitive programming questions (Codeforces), places among the top 500 students in the US in a qualifier for the USA Math Olympiad (AIME), and exceeds human PhD-level accuracy on a benchmark of physics, biology, and chemistry problems (GPQA). <sup><a href="#reference-2">[2]</a></sup></p>
-      </blockquote>
-      <p>And that's OpenAI o1, there are newer OpenAI reasoning models that outperform o1 since then. That sounds great on the surface and there's been a lot of excitement and discussion about reasoning models since they were released.</p>
-      <p>It seems like a step towards more sophisticated intelligence and a natural evolution of LLMs.</p>
-      <h2>The Illusion of Thinking</h2>
-      <p>With that we come to the paper <sup><a href="#reference-1">[1]</a></sup>. It challenges, evaluates and tests the strengths and limitations of these reasoning models through a different lens than the traditional benchmarks.</p>
-      <p>Evaluating LLMs is difficult because we're testing systems that excel at pattern matching across massive datasets. When these models appear to reason through problems, it's nearly impossible to determine whether they're genuinely extending their capabilities by reasoning or retrieving sophisticated patterns from their training data to simulate a reasoning process. Many benchmarks may be contaminated by now, and we lack reliable methods to distinguish between genuine reasoning and very convincing pattern-based responses.</p>
-      <p>Why do we care if the models can solve a problem correctly? To solve novel problems by drawing logical inferences and applying patterns across domains to generate new understanding. That process of using logic and applying patterns across fields would be close to the definition of general reasoning in cognitive science that defines it as:</p>
-      <blockquote>
-        <p>"…the cognitive process of drawing conclusions or making inferences based on available information or premises." <sup><a href="#reference-8">[8]</a></sup></p>
-      </blockquote>
-      <p>Most of the benchmarks where reasoning models are evaluated are math-heavy. They evaluate the final response, not the thought process and they are likely in the training data by now.</p>
-      <h2>Testing Approach</h2>
-      <p>The testing approach used in "The Illusion of Thinking" paper <sup><a href="#reference-1">[1]</a></sup> is with puzzle challenges - The Tower of Hanoi, River Crossing, Checker Jumping and Blocks World. These can be generated in numerous configurations and most importantly their complexity can be controlled.</p>
-      <p>They test using thinking and non-thinking models from the frontier labs, primarily:</p>
+
+      <h2>Abstract</h2>
+
+      <p>Recent advances in Large Reasoning Models (LRMs) have demonstrated impressive performance on traditional benchmarks, with systems like OpenAI's o1 achieving PhD-level accuracy in various domains. However, new research from Apple challenges our understanding of these models' reasoning capabilities. This paper examines "The Illusion of Thinking" study, which evaluates reasoning models through controlled puzzle complexity rather than traditional benchmarks, revealing unexpected limitations that suggest current AI systems may be engaging in sophisticated pattern matching rather than genuine reasoning.</p>
+
+      <h2>Introduction</h2>
+
+      <p>The development of Large Reasoning Models represents what many consider a significant advancement in artificial intelligence. These systems, which perform structured reasoning before generating outputs, have shown remarkable performance on conventional benchmarks. LLMs are sophisticated mathematical functions that use weighted parameters to predict the most likely next word based on context, while LRMs perform additional reasoning before generating their final output using structured reasoning methodologies to evaluate and refine their responses. This methodology should theoretically increase their accuracy, particularly when tackling more complex problems.</p>
+
+      <p>Conventional benchmarks demonstrate that reasoning models achieve superior performance and even exceed PhD-level accuracy in specialized domains. OpenAI o1 ranks in the 89th percentile on competitive programming questions (Codeforces), places among the top 500 students in the US in a qualifier for the USA Math Olympiad (AIME), and exceeds human PhD-level accuracy on a benchmark of physics, biology, and chemistry problems (GPQA) <a href="#reference-2"><sup>[2]</sup></a>. Subsequent OpenAI reasoning models have continued to outperform o1, generating considerable excitement about the potential for more sophisticated artificial intelligence.</p>
+
+      <p>This apparent progress seems to represent a natural evolution toward more sophisticated intelligence, suggesting a step beyond traditional language models toward systems capable of genuine reasoning.</p>
+
+      <h2>The Challenge of Evaluation</h2>
+
+      <p>Evaluating LLMs presents inherent difficulties because we are testing systems that excel at pattern matching across massive datasets. When these models appear to reason through problems, determining whether they are genuinely extending their capabilities through reasoning or retrieving sophisticated patterns from their training data to simulate reasoning becomes nearly impossible. Many benchmarks may be contaminated by training data exposure, and reliable methods to distinguish between genuine reasoning and convincing pattern-based responses remain elusive.</p>
+
+      <p>The significance of this distinction extends beyond academic interest. The goal is to develop systems capable of solving novel problems by drawing logical inferences and applying patterns across domains to generate new understanding. This process of using logic and applying patterns across fields aligns with the cognitive science definition of general reasoning as "the cognitive process of drawing conclusions or making inferences based on available information or premises" <a href="#reference-8"><sup>[8]</sup></a>.</p>
+
+      <p>Most benchmarks where reasoning models are evaluated focus heavily on mathematics, evaluate only final responses rather than thought processes, and likely include problems already present in training datasets.</p>
+
+      <h2>The Apple Research Study</h2>
+      <p>The research approach employed in "The Illusion of Thinking" <a href="#reference-1"><sup>[1]</sup></a> utilizes puzzle challenges including Tower of Hanoi, River Crossing, Checker Jumping, and Blocks World. These puzzles can be generated in numerous configurations with controllable complexity levels, providing a more systematic evaluation framework.</p>
+
+      <p>The researchers tested both thinking and non-thinking models from leading AI laboratories, primarily:</p>
+
       <ul>
         <li>Claude 3.7 Sonnet and Claude 3.7 Sonnet Thinking</li>
         <li>DeepSeek-V3 and DeepSeek-R1</li>
       </ul>
-      <p>They test both the ability of the models to solve the puzzle which we can call accuracy, but also record the thinking effort as they increase complexity to test the limits of the models and evaluate if the reasoning stage really improves their capabilities by introducing generalizable reasoning.</p>
-      <h2>The Results</h2>
-      <p>There most interesting findings are that <sup><a href="#reference-1">[1]</a></sup>:</p>
+
+      <p>The evaluation measured both problem-solving accuracy and reasoning effort across increasing complexity levels to test model limits and evaluate whether the reasoning stage genuinely improves capabilities through generalizable reasoning.</p>
+
+      <h2>Key Findings</h2>
+      
+      <p>The study revealed several counterintuitive results <a href="#reference-1"><sup>[1]</sup></a>:</p>
+
       <ol>
-        <li>
-          In these puzzles LLMs outperform LRMs on simple tasks, as LRMs overthink and can reason themselves out of the correct answer.
-          <ol className="list-[lower-latin]">
-            <li>Even then it's worth mentioning both perform well and maybe the bigger reason not to use LRMs for simple tasks is that they would just waste tokens unnecessarily.</li>
-          </ol>
-        </li>
-        <li>On medium complexity LRMs outperform LLMs, which is exactly what is expected, but is that because they extend their own capabilities by reasoning with logic or is there a different reason? There might be a different reason and that's what we'll see in a bit.</li>
-        <li>With high complexity is where the interesting findings begin - both LLMs and LRMs collapse suddenly.</li>
-        <li>More interestingly, reasoning efforts start decreasing as the problems get harder which is very unexpected. The researchers made sure to leave the models computational room in terms of tokens, so this is not a computational/token limit that is being hit.</li>
-        <li>Even when the researchers instructed the model to use an explicit algorithm to solve the games successfully, the models did not improve their results.</li>
-        <li>And finally - there were very big differences between the results in some games like The Tower of Hanoi, that is very popular among researchers and in computer science papers and articles and river crossing. The differences in the results were extreme - the models could perform up to 100 correct moves in the Tower of Hanoi but fail to provide more than 5 correct moves in the River Crossing puzzle.</li>
+        <li><strong>Simple Task Performance</strong>: LLMs outperformed LRMs on simple tasks, as LRMs demonstrated overthinking behavior and occasionally reasoned themselves out of correct answers. Both model types performed well overall, suggesting that LRMs may unnecessarily consume computational resources for straightforward problems.</li>
+        <li><strong>Medium Complexity Tasks</strong>: LRMs outperformed LLMs as expected, though the mechanism underlying this improvement remains questionable.</li>
+        <li><strong>High Complexity Collapse</strong>: Both LLMs and LRMs experienced sudden performance collapse at high complexity levels.</li>
+        <li><strong>Decreasing Reasoning Effort</strong>: Most significantly, reasoning efforts actually decreased as problems became more difficult, despite researchers ensuring adequate computational resources in terms of token limits.</li>
+        <li><strong>Algorithm Instruction Failure</strong>: Even when researchers explicitly instructed models to use specific algorithms known to solve the puzzles successfully, performance did not improve.</li>
+        <li><strong>Domain-Specific Variations</strong>: Extreme performance differences emerged between puzzles, with models achieving up to 100 correct moves in Tower of Hanoi while failing to provide more than 5 correct moves in River Crossing puzzles.</li>
       </ol>
-      <h2>What does this mean?</h2>
-      <p>All of these findings together show that it's possible this isn't real reasoning <sup><a href="#reference-1">[1]</a></sup>. The big difference between Tower of Hanoi and River Crossing in terms of accuracy does hint that we could be seeing even better pattern matching with LRMs than LLMs because we extend the model's token window with the reasoning stage and its able to find more patterns.</p>
-      <p>It is possible, that the LRM is giving us his best effort at something resembling a reasoning process on the topic, but does not actually apply patterns across domains with logic to actually reason through a novel problem, especially given that the reasoning effort decreases with complexity.</p>
-      <p>I did have questions (and still do) about how that differs from general reasoning. From what I could find in my research of neuroscience papers, superior pattern processing is indeed a fundamental function of the human brain - according to a neuroscience paper by Mark P Mattson <sup><a href="#reference-3">[3]</a></sup>. However, human pattern processing comes with several additional characteristics that seem different from what we see in current AI models.</p>
-      <p>First, our brains don't just match patterns - they actively model reality. According to Karl Friston and Stefan Kiebel, the brain "models the world as a hierarchy or cascade of dynamical systems" and "continuously makes predictions about the world and uses sensory input to update its models to improve accuracy" <sup><a href="#reference-4">[4]</a></sup>. This creates a feedback loop where the brain operates through "free energy minimization" - constantly generating predictions, comparing them to reality, and updating models to reduce "prediction error" <sup><a href="#reference-6">[6]</a></sup>.</p>
-      <p>Second, human reasoning appears to be genuinely hierarchical. Our brains have specialized hierarchical processing capabilities, particularly in the prefrontal cortex, that enable "hierarchy building" and processing of "structurally complex sequences" <sup><a href="#reference-4">[4]</a></sup>. This allows us to do multi-level pattern abstraction - "Abstraction allows us to ignore irrelevant details and focus on the information we need in order to act, and inference is the use of knowledge to make educated guesses about the world around us" <sup><a href="#reference-5">[5]</a></sup>.</p>
-      <p>Perhaps most importantly, humans demonstrate "fluid intelligence" - "the ability to solve logical problems, recognize patterns and process new information, independent of existing knowledge or learned skills" <sup><a href="#reference-7">[7]</a></sup>. This suggests we can genuinely reason beyond just sophisticated pattern matching.</p>
-      <h2>How is this different from LLMs/LRMs and current AI</h2>
-      <ol>
-        <li>
-          Better abstraction and compression of patterns into transferable principles
-          <ul>
-            <li>You learn debugging principles in one programming language and instantly apply them to a totally different language you've never seen before</li>
-          </ul>
-        </li>
-        <li>
-          Active testing and manipulation of the environment based on predictions
-          <ul>
-            <li>A toddler thinks "if I drop this cup, it will fall" and actually drops it to test the prediction</li>
-          </ul>
-        </li>
-        <li>
-          Hierarchical integration across multiple scales and domains
-          <ul>
-            <li>Recognizing that the same "feedback loop" pattern appears in everything from personal habits to economic systems to code architecture</li>
-          </ul>
-        </li>
-        <li>
-          Compositional recombination of patterns in novel ways
-          <ul>
-            <li>Combining musical rhythm patterns with visual design principles to create a new type of user interface animation</li>
-          </ul>
-        </li>
-      </ol>
-      <h2>Limitations of the Paper</h2>
-      <p>The Illusion of Thinking paper <sup><a href="#reference-1">[1]</a></sup> reveals interesting findings. As a single paper it's not enough to make conclusions about reasoning and limitations of language models in general. The testing methodology, is somewhat limited and does not transfer directly to real-world problems.</p>
-      <p>The findings of the paper do suggest that we might need to rethink how we evaluate reasoning capabilities with language models. Maybe these findings could be explained with a different limitation and not a fundamental flaw. On the other hand, it is also possible that the fundamental technology of large language models might be limited in terms of reasoning capabilities and a totally different approach would be necessary to achieve artificial general intelligence.</p>
+
+      <h2>Implications for Understanding AI Reasoning</h2>
+
+      <p>These findings collectively suggest that current reasoning models may not engage in genuine reasoning <a href="#reference-1"><sup>[1]</sup></a>. The dramatic performance differences between Tower of Hanoi and River Crossing puzzles particularly indicate that LRMs may represent enhanced pattern matching rather than true reasoning, benefiting from extended token windows during the reasoning stage to identify more sophisticated patterns.</p>
+
+      <p>The possibility emerges that LRMs generate their best approximation of a reasoning process without actually applying patterns across domains through logic to reason through novel problems. The counterintuitive decrease in reasoning effort with increased complexity particularly supports this interpretation.</p>
+
+      <h2>Comparison with Human Reasoning</h2>
+
+      <p>Research in neuroscience reveals that while superior pattern processing constitutes a fundamental function of the human brain <a href="#reference-3"><sup>[3]</sup></a>, human pattern processing incorporates several characteristics that appear absent in current AI models.</p>
+
+      <h3>Active World Modeling</h3>
+
+      <p>Human brains do not merely match patterns but actively model reality. According to Friston and Kiebel, the brain "models the world as a hierarchy or cascade of dynamical systems" and "continuously makes predictions about the world and uses sensory input to update its models to improve accuracy" <a href="#reference-4"><sup>[4]</sup></a>. This creates a feedback loop where the brain operates through "free energy minimization," constantly generating predictions, comparing them to reality, and updating models to reduce "prediction error" <a href="#reference-6"><sup>[6]</sup></a>.</p>
+
+      <h3>Hierarchical Processing</h3>
+
+      <p>Human reasoning demonstrates genuine hierarchical structure. Specialized hierarchical processing capabilities in the prefrontal cortex enable "hierarchy building" and processing of "structurally complex sequences" <a href="#reference-4"><sup>[4]</sup></a>. This supports multi-level pattern abstraction where "abstraction allows us to ignore irrelevant details and focus on the information we need in order to act, and inference is the use of knowledge to make educated guesses about the world around us" <a href="#reference-5"><sup>[5]</sup></a>.</p>
+
+      <h3>Fluid Intelligence</h3>
+
+      <p>Humans demonstrate "fluid intelligence"—"the ability to solve logical problems, recognize patterns and process new information, independent of existing knowledge or learned skills" <a href="#reference-7"><sup>[7]</sup></a>. This suggests genuine reasoning capabilities that extend beyond sophisticated pattern matching.</p>
+
+      <h2>Distinguishing Characteristics of Human Reasoning</h2>
+
+      <p>Several key differences emerge between human reasoning and current AI approaches:</p>
+
+      <h3>Enhanced Abstraction and Transfer</h3>
+
+      <p>Humans demonstrate superior abstraction and compression of patterns into transferable principles. For example, debugging principles learned in one programming language can be instantly applied to entirely different languages never previously encountered.</p>
+      
+      <h3>Active Environmental Testing</h3>
+      
+      <p>Humans engage in active testing and manipulation of their environment based on predictions. A toddler thinking "if I drop this cup, it will fall" will actually test this prediction through action.</p>
+      
+      <h3>Cross-Domain Integration</h3>
+      
+      <p>Humans excel at hierarchical integration across multiple scales and domains, recognizing that identical patterns (such as feedback loops) appear across diverse contexts from personal habits to economic systems to software architecture.</p>
+
+      <h3>Novel Compositional Recombination</h3>
+      
+      <p>Humans demonstrate the ability to combine patterns in novel ways, such as integrating musical rhythm patterns with visual design principles to create innovative user interface animations.</p>
+
+      <h2>Limitations and Future Directions</h2>
+      
+      <p>The "Illusion of Thinking" study <a href="#reference-1"><sup>[1]</sup></a> presents compelling findings that warrant serious consideration. However, as a single investigation, it provides insufficient evidence for broad conclusions about reasoning limitations in language models generally. The testing methodology, while innovative, remains somewhat limited and may not transfer directly to real-world problem-solving scenarios.</p>
+
+      <p>The findings suggest a need to reconsider evaluation methods for reasoning capabilities in language models. These results might be explained by different limitations rather than fundamental flaws in the underlying approach. Alternatively, the fundamental technology of large language models may indeed be limited in reasoning capabilities, potentially requiring entirely different approaches to achieve artificial general intelligence.</p>
+
       <h2>Conclusion</h2>
-      <p>I am very curious about this topic, and as just a computer scientist and someone who doesn't have the background in neuroscience or artificial intelligence I find the topic very interesting and challenging. So please, share your thoughts and knowledge in the comments. Tell me where I'm wrong and share interesting papers or findings you have read. I would be fascinated to learn more and that's exactly why I'm making this video - to engage viewers in scientific literature and get feedback on ideas.</p>
-      <h2>References</h2>
+      
+      <p>The emergence of reasoning models has generated significant excitement in the AI community, with impressive benchmark performance suggesting progress toward more sophisticated artificial intelligence. However, the Apple research challenges this optimistic interpretation, providing evidence that current systems may engage in enhanced pattern matching rather than genuine reasoning.</p>
+
+      <p>The implications extend beyond academic interest to fundamental questions about the path toward artificial general intelligence. If reasoning models represent primarily sophisticated pattern matching rather than genuine reasoning capabilities, alternative approaches may be necessary to achieve human-level cognitive abilities.</p>
+
+      <p>Further research is essential to understand these limitations and explore whether they represent fundamental constraints of current architectures or challenges that can be addressed through different methodologies. The distinction between pattern matching and reasoning remains crucial for the development of truly intelligent artificial systems.</p>
+      
       <References>
         <References.Item
           id={1}
