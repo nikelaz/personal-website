@@ -3,6 +3,7 @@ import Container from "@/components/container";
 import Card from "@/components/card";
 import Tag from "@/components/tag";
 import Button from "@/components/button";
+import videos from "@/data/videos";
 
 // Images
 import nlazarovImgSrc from "@/assets/nikola-lazarov.webp";
@@ -18,12 +19,35 @@ const Home = () => {
           <div className="col-span-6">
             <h1 className="mb-6">Hey There!</h1>
             <p className="mb-4">I"m a full-stack developer, passionate about science, technology and education. I balance my full-time job as a front-end developer with the creation of educational content on my YouTube channel. Beyond my professional pursuits, I love building all sorts of fun side-projects.</p>
-            <p>This is my personal website, where I will share my latest work, research and fun side-projects.</p>
+            <p className="mb-6">This is my personal website, where I will share my latest work, research and fun side-projects.</p>
+            <Button href="/about-me" icon="arrow">About Me</Button>
           </div>
         </Container>
       </section>
       <Container className="pt-13 pb-15">
         <section className="flex flex-col gap-6">
+          <h2>Latest Videos</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {videos.slice(0, 4).map((video, index) => (  
+              <Card key={video.id}>
+                <Card.Image src={`https://i3.ytimg.com/vi/${video.id}/maxresdefault.jpg`} loading={index < 8 ? "eager"  : "lazy"} alt={`${video.title} video thumbnail`} />
+                <Card.Content>
+                  {video.tags ? (
+                    <div className="flex items-center gap-2 flex-wrap">
+                      {video.tags.map(tag => (
+                        <Tag key={tag}>{tag}</Tag>
+                      ))}
+                    </div>
+                  ) : null}
+                  <Card.Link href={`https://youtu.be/${video.id}`} target="_blank" rel="noopener">{video.title}</Card.Link>
+                  <p className="text-sm text-neutral-400">{video.summary}</p>
+                </Card.Content>
+              </Card>
+            ))}
+          </div>
+          <Button href="/videos" icon="arrow">All Videos</Button>
+        </section>
+        <section className="flex flex-col gap-6 pt-13">
           <h2>Latest Articles</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card>
@@ -36,8 +60,9 @@ const Home = () => {
               </Card.Content>
             </Card>
           </div>
-          <Button href="/articles" icon="arrow">View All Articles</Button>
+          <Button href="/articles" icon="arrow">All Articles</Button>
         </section>
+        
       </Container>
     </>
   );

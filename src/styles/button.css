@@ -4,6 +4,7 @@
   .button {
     @apply inline-flex items-center w-fit gap-2 px-4 py-2 bg-white rounded;
     @apply text-sm text-neutral-950 font-medium;
+    @apply border-2 border-white;
     @apply transition ease-linear;
     @apply shadow-lg shadow-white/10 hover:shadow-white/20;
   }
@@ -14,5 +15,13 @@
 
   .button__arrow:hover .button-icon {
     @apply translate-x-1;
+  }
+
+  .button__disabled {
+    @apply pointer-events-none opacity-50;
+  }
+
+  .button.button__secondary {
+    @apply bg-transparent text-neutral-100;
   }
 }

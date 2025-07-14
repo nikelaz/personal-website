@@ -4,6 +4,7 @@ type ButtonProps = Readonly<{
   href?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   icon?: 'arrow';
+  disabled?: boolean;
 }> & ChildrenProps & ClassNameProps;
 
 const Button = (props: ButtonProps) => {
@@ -11,9 +12,10 @@ const Button = (props: ButtonProps) => {
 
   return (
     <Component
-      className={clsx("button", props.icon === "arrow" && "button__arrow", props.className)}
+      className={clsx("button", props.icon === "arrow" && "button__arrow", props.disabled && "button__disabled", props.variant === "secondary" && "button__secondary", props.className)}
       href={props.href}
       onClick={props.onClick}
+      aria-disabled={props.disabled}
     >
       {props.children}
       {props.icon === 'arrow' ? (
