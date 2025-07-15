@@ -78,7 +78,7 @@ const AboutMe = () => {
                 <IconTag title="YouTube" href="https://youtube.com/@nltech1" target="_blank">
                   <IconYouTube width="1em" height="1em" />
                 </IconTag> 
-                <IconTag title="GitHub" href="https://nikelaz/github" target="_blank">
+                <IconTag title="GitHub" href="https://github.com/nikelaz" target="_blank">
                   <IconGitHub width="1em" height="1em" />
                 </IconTag> 
                 <IconTag title="LinkedIn" href="https://www.linkedin.com/in/nikola-lazarov" target="_blank">

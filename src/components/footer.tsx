@@ -10,17 +10,16 @@ const Footer = () => {
           <nav className="flex flex-wrap gap-4 text-sm">
             <Link href="/privacy-policy">Privacy Policy</Link>
             <Link href="/cookie-policy">Cookie Policy</Link>
-            <a href="https://github.com/nikelaz" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://youtube.com/@nltech1" target="_blank" rel="noopener">YouTube</a>
             <a href="https://github.com/nikelaz" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://github.com/nikelaz" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://github.com/nikelaz" target="_blank" rel="noopener">X</a>
-            <a href="https://github.com/nikelaz" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.linkedin.com/in/nikola-lazarov" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://x.com/nikelaz" target="_blank" rel="noopener">X</a>
+            <a href="https://www.instagram.com/nikolalazarov/" target="_blank" rel="noopener">Instagram</a>
           </nav>
         </div>
       </Container>
     </footer>
   );
-}
+};
 
 export default Footer;
-
