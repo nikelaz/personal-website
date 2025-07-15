@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import References from "@/components/references";
 import IconTag from "@/components/icon-tag";
 import { notFound } from "next/navigation";
@@ -9,6 +10,37 @@ export const generateStaticParams = async () => {
   return articles.map((article) => ({
     slug: article.slug,
   }));
+};
+
+export const generateMetadata = async (props: ArticleProps): Promise<Metadata> => {
+  const { slug } = await props.params;
+  const article = articles.find((article) => article.slug === slug);
+
+  if (!article) {
+    return {
+      title: "Article Not Found",
+      description: "The requested article could not be found.",
+    };
+  }
+
+  return {
+    title: `${article.title} - Nikola Lazarov`,
+    description: article.summary,
+    openGraph: {
+      title: article.title,
+      description: article.summary,
+      type: "article",
+      publishedTime: article.date,
+      authors: [article.author],
+      tags: article.tags,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.summary,
+      creator: "@nikelaz",
+    },
+  };
 };
 
 type ArticleProps = Readonly<{
@@ -25,8 +57,36 @@ const Article = async (props: ArticleProps) => {
     return notFound();
   }
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": article.title,
+    "description": article.summary,
+    "author": {
+      "@type": "Person",
+      "name": article.author,
+      "url": "https://nikolalazarov.com"
+    },
+    "datePublished": article.date,
+    "dateModified": article.date,
+    "publisher": {
+      "@type": "Person",
+      "name": "Nikola Lazarov",
+      "url": "https://nikolalazarov.com"
+    },
+    "keywords": article.tags,
+    "articleSection": "Technology",
+    "inLanguage": "en-US"
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData)
+        }}
+      />
       <h1>{article.title}</h1>
 
       <div className="flex items-center gap-8 text-sm text-neutral-600 dark:text-neutral-300 mb-4">

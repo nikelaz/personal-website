@@ -2,6 +2,8 @@ type Video = {
   id: string;
   title: string;
   summary: string;
+  date?: string;
+  duration?: string;
   tags?: string[];
 };
 

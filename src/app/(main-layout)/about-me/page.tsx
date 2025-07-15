@@ -1,7 +1,27 @@
+import type { Metadata } from "next";
 import Card from "@/components/card";
 import Container from "@/components/container";
 import Image from "next/image";
 import IconTag from "@/components/icon-tag";
+
+export const metadata: Metadata = {
+  title: "About Me - Nikola Lazarov",
+  description: "Learn about Nikola Lazarov - Full-stack developer from Sofia, Bulgaria, Senior Front-End Developer at Progress, founder of Budget Warden, and YouTube educator creating programming content.",
+  openGraph: {
+    title: "About Me - Nikola Lazarov",
+    description: "Learn about Nikola Lazarov - Full-stack developer from Sofia, Bulgaria, Senior Front-End Developer at Progress, founder of Budget Warden, and YouTube educator creating programming content.",
+    type: "profile",
+    firstName: "Nikola",
+    lastName: "Lazarov",
+    username: "nikelaz",
+  },
+  twitter: {
+    card: "summary",
+    title: "About Me - Nikola Lazarov",
+    description: "Learn about Nikola Lazarov - Full-stack developer from Sofia, Bulgaria, Senior Front-End Developer at Progress, founder of Budget Warden, and YouTube educator creating programming content.",
+    creator: "@nikelaz",
+  },
+};
 
 import IconAcademic from "@/assets/icons/academic.svg";
 import IconInstitution from "@/assets/icons/institution.svg";

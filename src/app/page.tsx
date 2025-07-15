@@ -1,9 +1,26 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Container from "@/components/container";
 import Card from "@/components/card";
 import Tag from "@/components/tag";
 import Button from "@/components/button";
 import videos from "@/data/videos";
+
+export const metadata: Metadata = {
+  title: "Nikola Lazarov - Full-Stack Developer & YouTube Educator",
+  description: "Personal website of Nikola Lazarov - Full-stack developer, YouTube educator, and founder of Budget Warden. Explore software engineering tutorials, technical articles, and open-source projects.",
+  openGraph: {
+    title: "Nikola Lazarov - Full-Stack Developer & YouTube Educator",
+    description: "Personal website of Nikola Lazarov - Full-stack developer, YouTube educator, and founder of Budget Warden. Explore software engineering tutorials, technical articles, and open-source projects.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nikola Lazarov - Full-Stack Developer & YouTube Educator",
+    description: "Personal website of Nikola Lazarov - Full-stack developer, YouTube educator, and founder of Budget Warden. Explore software engineering tutorials, technical articles, and open-source projects.",
+    creator: "@nikelaz",
+  },
+};
 
 // Images
 import nlazarovImgSrc from "@/assets/nikola-lazarov.webp";
