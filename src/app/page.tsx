@@ -18,7 +18,7 @@ const Home = () => {
           </div>
           <div className="col-span-6">
             <h1 className="mb-6">Hey There!</h1>
-            <p className="mb-4">I"m a full-stack developer, passionate about science, technology and education. I balance my full-time job as a front-end developer with the creation of educational content on my YouTube channel. Beyond my professional pursuits, I love building all sorts of fun side-projects.</p>
+            <p className="mb-4">I&quot;m a full-stack developer, passionate about science, technology and education. I balance my full-time job as a front-end developer with the creation of educational content on my YouTube channel. Beyond my professional pursuits, I love building all sorts of fun side-projects.</p>
             <p className="mb-6">This is my personal website, where I will share my latest work, research and fun side-projects.</p>
             <Button href="/about-me" icon="arrow">About Me</Button>
           </div>
@@ -56,7 +56,7 @@ const Home = () => {
                   <Tag>Artificial Intelligence</Tag>
                 </div>
                 <Card.Link href="/articles/the-reasoning-mirage-why-ai-models-might-just-be-really-good-at-pretending">The Reasoning Mirage: Why AI Models Might Just Be Really Good at Pretending</Card.Link>
-                <p className="text-sm text-neutral-400">Apple"s "The Illusion of Thinking" suggests reasoning models may simulate, not perform, true reasoning—excelling at pattern matching but failing as problem complexity rises.</p>
+                <p className="text-sm text-neutral-400">Apple&apos;s &quot;The Illusion of Thinking&quot; suggests reasoning models may simulate, not perform, true reasoning—excelling at pattern matching but failing as problem complexity rises.</p>
               </Card.Content>
             </Card>
           </div>

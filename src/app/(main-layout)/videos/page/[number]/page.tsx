@@ -2,13 +2,14 @@ import VideosView from "@/components/videos-view";
 import videos from "@/data/videos";
 
 type VideoPageProps = Readonly<{
-  params: {
+  params: Promise<{
     number: string;
-  },
+  }>,
 }>;
 
-const VideoPage = (props: VideoPageProps) => { 
-  const number = props.params.number ? parseInt(props.params.number, 10) : 1;
+const VideoPage = async (props: VideoPageProps) => { 
+  const params = await props.params;
+  const number = params.number ? parseInt(params.number, 10) : 1;
 
   return (
     <VideosView

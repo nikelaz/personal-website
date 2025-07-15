@@ -19,7 +19,7 @@ const formatCitation = (input?: string) => {
   return input ? `${input}.` : '';
 };
 
-References.Item = (props: ReferenceItemProps) => {
+const ReferencesItem = (props: ReferenceItemProps) => {
   const citation = `${formatCitation(props.author)} ${formatCitation(props.year)} ${formatCitation(props.title)} ${formatCitation(props.source)}`.trim();
 
   return (
@@ -34,5 +34,9 @@ References.Item = (props: ReferenceItemProps) => {
     </li>
   );
 };
+
+ReferencesItem.displayName = "References.Item";
+
+References.Item = ReferencesItem;
 
 export default References;

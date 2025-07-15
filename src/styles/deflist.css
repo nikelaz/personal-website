@@ -1,0 +1,15 @@
+@reference "tailwindcss";
+
+@layer components {
+  .deflist dt {
+    @apply text-xs uppercase text-neutral-300 font-medium mb-2;
+  }
+
+  .deflist dd {
+    @apply text-sm; 
+  }
+
+  .deflist dd:not(:last-child) {
+    @apply mb-5;
+  }
+}

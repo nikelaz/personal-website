@@ -30,6 +30,7 @@ const RootLayout = (props: ChildrenProps) => {
           {props.children}
         </main>
         <Footer />
+        <script data-goatcounter="https://nikolalazarov.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
       </body>
     </html>
   );
