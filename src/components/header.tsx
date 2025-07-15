@@ -10,8 +10,8 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 py-3 z-10 bg-neutral-950/30 border-b-1 border-neutral-700/50 backdrop-blur-md">
-      <Container className="">
+    <header className="sticky top-0 py-4 lg:py-3 z-10 bg-white/60 dark:bg-neutral-950/30 border-b-1 border-neutral-300/50 dark:border-neutral-700/50 backdrop-blur-md">
+      <Container>
         <div className="w-full flex flex-wrap flex-col md:flex-row items-start md:items-center justify-between md:gap-4">
           <Logo />
           <Nav isOpen={isOpen} />

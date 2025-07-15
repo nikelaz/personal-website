@@ -14,7 +14,7 @@ const IconTag = (props: IconTagProps) => {
       </div>
       <div>
         {props.header ? (
-          <div className="text-xs text-neutral-300">{props.header}</div>
+          <div className="text-xs text-neutral-600 dark:text-neutral-300">{props.header}</div>
         ) : null}
 
         {props.title && props.href ? (

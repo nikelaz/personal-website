@@ -2,7 +2,13 @@
 
 @layer components {
   .hero {
-    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='50' x2='50' y2='50' stroke='%23222' stroke-width='1'/%3E%3Cline x1='50' y1='0' x2='50' y2='50' stroke='%23222' stroke-width='1'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3csvg width='50' height='50' xmlns='http://www.w3.org/2000/svg'%3e%3cline x1='0' y1='50' x2='50' y2='50' stroke='%23e2e2e2' stroke-width='1'/%3e%3cline x1='50' y1='0' x2='50' y2='50' stroke='%23e2e2e2' stroke-width='1'/%3e%3c/svg%3e");
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .hero {
+      background-image: url("data:image/svg+xml,%3csvg width='50' height='50' xmlns='http://www.w3.org/2000/svg'%3e%3cline x1='0' y1='50' x2='50' y2='50' stroke='%23222' stroke-width='1'/%3e%3cline x1='50' y1='0' x2='50' y2='50' stroke='%23222' stroke-width='1'/%3e%3c/svg%3e");
+    }
   }
 
   .hero-image {

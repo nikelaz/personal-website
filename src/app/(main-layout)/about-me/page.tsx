@@ -17,14 +17,14 @@ import headshotImg from "@/assets/nlazarov-about-me-headshot.webp";
 const AboutMe = () => {
   return (
     <Container className="grid grid-cols-12 gap-6">
-      <div className="col-span-3">
+      <div className="col-span-12 sm:col-span-3">
         <Card inactive>
-          <header className="about-me-header border-b border-neutral-700/50">
+          <header className="about-me-header border-b border-neutral-300/50 dark:border-neutral-700/50">
             <Image src={headshotImg} alt="Nikola Lazarov Headshot" />
           </header>
           <Card.Content>
             <h2 className="text-2xl mb-2">Nikola Lazarov</h2>
-            <dl className="deflist">
+            <dl className="deflist dark:text-neutral-100">
               <dt>Occupation</dt>
               <dd>Full-Stack Developer</dd>
 
@@ -87,7 +87,7 @@ const AboutMe = () => {
         </Card>
       </div>
 
-      <div className="col-start-5 col-span-6 flex flex-col gap-4">
+      <div className="col-span-12 sm:col-span-7 lg:col-start-5 lg:col-span-6 flex flex-col gap-4">
         <h1 className="mb-3">About Me</h1>
         <p>Hey there! I&apos;m Nikola Lazarov, a full-stack developer from Sofia, Bulgaria. I love building things – whether it&apos;s web applications, YouTube videos, or meticulously crafted coding projects that solve real problems.</p>
         <h2>What I Do</h2>

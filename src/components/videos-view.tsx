@@ -39,7 +39,7 @@ const VideosView = (props: VideosViewProps) => {
                   </div>
                 ) : null}
                 <Card.Link href={`https://youtu.be/${video.id}`} target="_blank" rel="noopener">{video.title}</Card.Link>
-                <p className="text-sm text-neutral-400">{video.summary}</p>
+                <p>{video.summary}</p>
               </Card.Content>
             </Card>
           ))}

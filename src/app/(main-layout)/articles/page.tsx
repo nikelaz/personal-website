@@ -2,6 +2,7 @@
 import Card from "@/components/card";
 import Tag from "@/components/tag";
 import Container from "@/components/container";
+import articles from "@/data/articles";
 
 const Articles = () => {
   return (
@@ -11,15 +12,21 @@ const Articles = () => {
           <h1 className="leading-none">Articles</h1>
         </header>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Card>
-            <Card.Content>
-              <div className="flex items-center gap-2">
-                <Tag>Artificial Intelligence</Tag>
-              </div>
-              <Card.Link href="/articles/the-reasoning-mirage-why-ai-models-might-just-be-really-good-at-pretending">The Reasoning Mirage: Why AI Models Might Just Be Really Good at Pretending</Card.Link>
-              <p className="text-sm text-neutral-400">Apple&apos;s &quot;The Illusion of Thinking&quot; suggests reasoning models may simulate, not perform, true reasoning—excelling at pattern matching but failing as problem complexity rises.</p>
-            </Card.Content>
-          </Card>
+          {articles.map((article) => (
+            <Card key={article.slug}>
+              <Card.Content>
+                {article.tags ? (
+                  <div className="flex items-center gap-2 flex-wrap">
+                    {article.tags.map(tag => (
+                      <Tag key={tag}>{tag}</Tag>
+                    ))}
+                  </div>
+                ) : null}
+                <Card.Link href={`/articles/${article.slug}`}>{article.title}</Card.Link>
+                <p>{article.summary}</p>
+              </Card.Content>
+            </Card>
+          ))}
         </div>
       </section>
     </Container>

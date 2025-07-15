@@ -8,7 +8,7 @@ type CardProps = Readonly<{
 
 const Card = (props: CardProps) => {
   return (
-    <article className={clsx("relative bg-neutral-900 border border-neutral-700/50 rounded-lg overflow-hidden", !props.inactive && "hover:bg-neutral-800 hover:border-neutral-600/50 transition-colors")}>
+    <article className={clsx("relative bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700/50 rounded-lg overflow-hidden", !props.inactive && "hover:bg-neutral-100/50 dark:hover:bg-neutral-800 dark:hover:border-neutral-600/50 transition-colors")}>
       {props.children}
     </article>
   );
@@ -28,7 +28,7 @@ Card.Image = CardImage;
 
 const CardContent = (props: ChildrenProps) => {
   return (
-    <div className="flex flex-col gap-3 pt-6 pb-6 px-4">
+    <div className="flex flex-col gap-3 pt-6 pb-6 px-4 text-neutral-700 dark:text-neutral-400 text-sm">
       {props.children}
     </div>
   );

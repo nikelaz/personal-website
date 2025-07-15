@@ -2,7 +2,7 @@
 
 @layer components {
   .deflist dt {
-    @apply text-xs uppercase text-neutral-300 font-medium mb-2;
+    @apply text-xs uppercase text-neutral-600 dark:text-neutral-300 font-medium mb-2;
   }
 
   .deflist dd {

@@ -3,7 +3,8 @@ const articles: Article[] = [
     slug: "the-reasoning-mirage-why-ai-models-might-just-be-really-good-at-pretending",
     title: "The Reasoning Mirage: Why AI Models Might Just Be Really Good at Pretending",
     summary: "Apple's \"The Illusion of Thinking\" suggests reasoning models may simulate, not perform, true reasoning—excelling at pattern matching but failing as problem complexity rises.",
-    date: "29-06-2025",
+    date: "2025-06-29",
+    author: "Nikola Lazarov",
     html: `
       <h2>Abstract</h2>
       <p>Recent advances in Large Reasoning Models (LRMs) have demonstrated impressive performance on traditional benchmarks, with systems like OpenAI's o1 achieving PhD-level accuracy in various domains. However, new research from Apple challenges our understanding of these models' reasoning capabilities. This paper examines "The Illusion of Thinking" study, which evaluates reasoning models through controlled puzzle complexity rather than traditional benchmarks, revealing unexpected limitations that suggest current AI systems may be engaging in sophisticated pattern matching rather than genuine reasoning.</p>

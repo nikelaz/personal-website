@@ -3,8 +3,26 @@
 @layer base {
   html, body {
     font-size: 24px;
-    @apply dark:bg-neutral-950 dark:text-neutral-100;
+    @apply dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100;
     scroll-behavior: smooth;
+  }
+
+  @media (max-width: 1280px) {
+    html, body {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    html, body {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    html, body {
+      font-size: 14px;
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -40,11 +58,7 @@
   }
 
   a {
-    @apply text-blue-300 hover:text-blue-200 transition;
-  }
-
-  blockquote {
-    @apply border-l-4 border-neutral-700 pl-4 italic text-neutral-200;
+    @apply text-blue-700 hover:text-blue-900 dark:text-blue-300 dark:hover:text-blue-200 transition;
   }
 
   [id] {
@@ -54,7 +68,7 @@
 
 @layer components {
   .article {
-    @apply text-neutral-100;
+    @apply text-neutral-900 dark:text-neutral-100;
   }
 
   .article p,

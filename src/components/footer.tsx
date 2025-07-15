@@ -5,9 +5,9 @@ const Footer = () => {
   return (
     <footer>
       <Container>
-        <div className="flex items-center justify-between gap-6 py-15 border-t border-neutral-700/50">
+        <div className="flex flex-wrap items-center justify-between gap-6 py-10 sm:py-15 border-t border-neutral-300/50 dark:border-neutral-700/50">
           <p>&copy; Nikola Lazarov 2025</p>
-          <nav className="flex gap-4">
+          <nav className="flex flex-wrap gap-4 text-sm">
             <Link href="/privacy-policy">Privacy Policy</Link>
             <Link href="/cookie-policy">Cookie Policy</Link>
             <a href="https://github.com/nikelaz" target="_blank" rel="noopener">YouTube</a>

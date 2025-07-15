@@ -28,7 +28,7 @@ const ReferencesItem = (props: ReferenceItemProps) => {
       {props.url ? (
         <>
           <br />
-          <a href={props.url} target="_blank" rel="noopener">{props.url}</a>
+          <a href={props.url} target="_blank" rel="noopener" className="break-words">{props.url}</a>
         </>
       ) : null}
     </li>

@@ -20,5 +20,6 @@ type Article = {
   date: string;
   html: string;
   tags: string[];
+  author: string;
   references?: Reference[];
 };
