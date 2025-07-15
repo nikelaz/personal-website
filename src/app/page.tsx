@@ -14,7 +14,7 @@ const Home = () => {
       <section className="hero pt-2 border-b-1 border-neutral-300/50 dark:border-neutral-700/50">
         <Container className="grid grid-cols-12 gap-6 items-center">
           <div className="hidden sm:block hero-image flex-shrink-0 col-span-5 self-end justify-self-center">
-            <Image src={nlazarovImgSrc} alt="Nikola Lazarov" width={427} height={596} /> 
+            <Image loading="eager" fetchPriority="high" src={nlazarovImgSrc} alt="Nikola Lazarov" width={427} height={596} /> 
           </div>
           <div className="pt-4 pb-6 sm:pt-6 pb-8 col-span-12 sm:col-span-6">
             <h1 className="mb-6">Hey There!</h1>
