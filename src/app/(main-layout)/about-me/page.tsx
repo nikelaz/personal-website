@@ -43,7 +43,7 @@ const AboutMe = () => {
             <Image src={headshotImg} alt="Nikola Lazarov Headshot" />
           </header>
           <Card.Content>
-            <h2 className="text-2xl mb-2">Nikola Lazarov</h2>
+            <h2 className="text-2xl mb-2 dark:text-neutral-100">Nikola Lazarov</h2>
             <dl className="deflist dark:text-neutral-100">
               <dt>Occupation</dt>
               <dd>Full-Stack Developer</dd>
@@ -94,11 +94,11 @@ const AboutMe = () => {
 
               <dt>Curriculum Vitae</dt>
               <dd className="flex flex-col gap-1">
-                <IconTag title="One Page CV" footer="PDF, 2.8 MB" href="/cv/one-page-cv.pdf" target="_blank">
+                <IconTag title="One Page CV" footer="PDF, 2.8 MB" href="/one-page-cv.pdf" target="_blank">
                   <IconPDF width="1em" height="1em" />
                 </IconTag>
 
-                <IconTag title="Extended CV" footer="PDF, 3.6 MB" href="/cv/extended-cv.pdf" target="_blank">
+                <IconTag title="Extended CV" footer="PDF, 3.6 MB" href="/extended-cv.pdf" target="_blank">
                   <IconPDF width="1em" height="1em" />
                 </IconTag>
               </dd>
