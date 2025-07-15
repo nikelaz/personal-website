@@ -94,11 +94,11 @@ const AboutMe = () => {
 
               <dt>Curriculum Vitae</dt>
               <dd className="flex flex-col gap-1">
-                <IconTag title="One Page CV" footer="PDF, 2.8 MB" href="/one-page-cv.pdf" target="_blank">
+                <IconTag title="One Page CV" footer="PDF, 1.9 MB" href="/one-page-cv.pdf" target="_blank">
                   <IconPDF width="1em" height="1em" />
                 </IconTag>
 
-                <IconTag title="Extended CV" footer="PDF, 3.6 MB" href="/extended-cv.pdf" target="_blank">
+                <IconTag title="Extended CV" footer="PDF, 2.7 MB" href="/extended-cv.pdf" target="_blank">
                   <IconPDF width="1em" height="1em" />
                 </IconTag>
               </dd>
