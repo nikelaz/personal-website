@@ -75,4 +75,23 @@
   .article li{
     line-height: 1.65;
   }
+
+  .article pre {
+    border-radius: 0.4rem;
+  }
+
+  .article table td,
+  .article table th {
+    @apply border-1 border-neutral-700/40 py-2 px-3 text-left text-sm;
+  }
+
+  .article table th {
+    @apply font-medium;
+  }
+
+  .article table caption {
+    caption-side: bottom;
+    text-align: left;
+    @apply mt-3 leading-6 text-xs;
+  }
 }

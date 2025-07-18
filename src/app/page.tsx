@@ -35,7 +35,7 @@ const Home = () => {
           </div>
           <div className="pt-4 pb-6 sm:pt-6 pb-8 col-span-12 sm:col-span-6">
             <h1 className="mb-6">Hey There!</h1>
-            <p className="mb-4">I&quot;m a full-stack developer, passionate about science, technology and education. I balance my full-time job as a front-end developer with the creation of educational content on my YouTube channel. Beyond my professional pursuits, I love building all sorts of fun side-projects.</p>
+            <p className="mb-4">I&apos;m a full-stack developer, passionate about science, technology and education. I balance my full-time job as a front-end developer with the creation of educational content on my <a href="https://youtube.com/@nltech1" target="_blank" rel="noopener" className="underline">YouTube channel</a>. Beyond my professional pursuits, I love building all sorts of fun side-projects.</p>
             <p className="mb-6">This is my personal website, where I will share my latest work, research and fun side-projects.</p>
             <Button href="/about-me" icon="arrow">About Me</Button>
           </div>
