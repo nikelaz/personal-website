@@ -35,7 +35,7 @@ export const generateMetadata = async (props: ArticleProps): Promise<Metadata> =
       tags: article.tags,
       images: [
         {
-          url: `/${article.ogImage || "og-image.png"}`,
+          url: `https://nikolalazarov.com/${article.ogImage || "og-image.png"}`,
           width: 1200,
           height: 630,
           alt: "Nikola Lazarov - Full-Stack Developer & YouTube Educator",

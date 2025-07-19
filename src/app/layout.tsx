@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Nikola Lazarov",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://nikolalazarov.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "Nikola Lazarov - Full-Stack Developer & YouTube Educator",
