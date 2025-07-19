@@ -33,6 +33,14 @@ export const generateMetadata = async (props: ArticleProps): Promise<Metadata> =
       publishedTime: article.date,
       authors: [article.author],
       tags: article.tags,
+      images: [
+        {
+          url: `/${article.ogImage || "og-image.png"}`,
+          width: 1200,
+          height: 630,
+          alt: "Nikola Lazarov - Full-Stack Developer & YouTube Educator",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",

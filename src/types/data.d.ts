@@ -24,4 +24,5 @@ type Article = {
   tags: string[];
   author: string;
   references?: Reference[];
+  ogImage?: string;
 };

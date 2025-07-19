@@ -7,6 +7,7 @@ export default {
   date: "2022-08-28",
   author: "Nikola Lazarov",
   tags: ["Software Architecture"],
+  ogImage: "rest-api-design-og-image.png",
   html: `
     <h2>Abstract</h2>
 

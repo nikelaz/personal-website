@@ -7,6 +7,7 @@ export default {
   date: "2022-06-04",
   author: "Nikola Lazarov",
   tags: ["Data Structures"],
+  ogImage: "linked-lists-og-image.png",
   html: `
     <h2>Abstract</h2>
     <p>Linked lists represent one of the fundamental data structures in computer science, offering dynamic memory allocation and efficient insertion operations at specific positions. However, their practical performance characteristics often diverge significantly from theoretical complexity analysis due to modern computer architecture considerations. This article examines the design principles, implementation strategies, and real-world performance implications of linked list variants, providing empirical analysis of their behavior in contemporary computing environments and practical guidance for their appropriate application.</p>

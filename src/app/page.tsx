@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     title: "Nikola Lazarov - Full-Stack Developer & YouTube Educator",
     description: "Personal website of Nikola Lazarov - Full-stack developer, YouTube educator, and founder of Budget Warden. Explore software engineering tutorials, technical articles, and open-source projects.",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Nikola Lazarov - Full-Stack Developer & YouTube Educator",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
