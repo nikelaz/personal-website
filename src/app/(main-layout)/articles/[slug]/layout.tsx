@@ -1,6 +1,4 @@
-import Script from "next/script";
 import Container from "@/components/container";
-import "@/vendor/prism/prism.css";
 
 const IndividualArticleLayout = (props: ChildrenProps) => {
   return (
@@ -10,7 +8,6 @@ const IndividualArticleLayout = (props: ChildrenProps) => {
           {props.children}
         </article>
       </Container>
-      <Script src="/prism.js" />
     </>
   );
 };
