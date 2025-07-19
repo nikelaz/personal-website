@@ -5,6 +5,7 @@ import Card from "@/components/card";
 import Tag from "@/components/tag";
 import Button from "@/components/button";
 import videos from "@/data/videos";
+import articles from "@/data/articles";
 
 export const metadata: Metadata = {
   title: "Nikola Lazarov - Full-Stack Developer & YouTube Educator",
@@ -75,15 +76,19 @@ const Home = () => {
         <section className="flex flex-col gap-6 pt-8 sm:pt-13">
           <h2>Latest Articles</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card>
-              <Card.Content>
-                <div className="flex items-center gap-2">
-                  <Tag>Artificial Intelligence</Tag>
-                </div>
-                <Card.Link href="/articles/the-reasoning-mirage-why-ai-models-might-just-be-really-good-at-pretending">The Reasoning Mirage: Why AI Models Might Just Be Really Good at Pretending</Card.Link>
-                <p>Apple&apos;s &quot;The Illusion of Thinking&quot; suggests reasoning models may simulate, not perform, true reasoning—excelling at pattern matching but failing as problem complexity rises.</p>
-              </Card.Content>
-            </Card>
+            {articles.slice(0, 3).map((article) => (
+              <Card key={article.slug}>
+                <Card.Content>
+                  <div className="flex items-center gap-2">
+                    {article.tags.map(tag => (
+                      <Tag key={tag}>{tag}</Tag>
+                    ))}
+                  </div>
+                  <Card.Link href={`/articles/${article.slug}`}>{article.title}</Card.Link>
+                  <p>{article.summary}</p>
+                </Card.Content>
+              </Card>
+            ))}
           </div>
           <Button href="/articles" icon="arrow">All Articles</Button>
         </section>
