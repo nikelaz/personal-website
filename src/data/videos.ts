@@ -1,5 +1,17 @@
 const videos: Video[] = [
   {
+    id: "n7fyOuHNx0M",
+    title: "First Look at Iced GUI Library 🦀 Rust's Elm-Inspired Framework for Desktop Apps",
+    summary: "In this video, I dive into Iced—the Rust GUI library powering System76's new Cosmic desktop environment.",
+    tags: ["Rust"],
+  },
+  {
+    id: "1fLr0FB4FHA",
+    title: "New Feature in a React Native App - Per-Category Transactions View 💻  Coding Session",
+    summary: "In this coding session, I implement a complete category-specific transactions view in Budget Warden, my React Native personal finance app.",
+    tags: ["Coding Session", "React Native"],
+  },
+  {
     id: "pwt4vL60Wyg",
     title: "Supercharging Neovim with AI: Copilot, Avante & Claude Code",
     summary: "How I use AI inside (and alongside) Neovim for a faster, more capable development experience.",
@@ -263,6 +275,30 @@ const videos: Video[] = [
     summary: "How to localize items in different languages with the Strapi Internationalization (i18n) plugin.",
     tags: ["Content Management", "Web Development"],
   },
+  {
+    id: "T7-unW2A2Kc",
+    title: "JavaScript Tag Functions",
+    summary: "In this video I demonstrate how to use JavaScript/ECMAScript tag functions aka tag templates.",
+    tags: ["JavaScript"],
+  },
+  {
+    id: "Uqs7pbqWJMc",
+    title: "Fleet vs Visual Studio Code",
+    summary: "I compare JetBrains Fleet with Microsoft Visual Studio Code.",
+    tags: ["Software Reviews", "Developer Tools"],
+  },
+  {
+    id: "_5_OI7v_Sic",
+    title: "Server Actions - Next.js Course #10",
+    summary: "I show you how to use server actions in Next.js. Server actions are a React feature that allows you to run an action/function exclusively on the server.",
+    tags: ["Web Development", "Next.js"],
+  },
+  {
+    id: "r9JCuUkcuBU",
+    title: "JWT Authentication with Login and Registration Views 🚀 Strapi Course #6",
+    summary: "I demonstrate how to gate your Strapi content with a JWT authentication.",
+    tags: ["Content Management", "Web Development"],
+  }
 ];
 
 export default videos;
