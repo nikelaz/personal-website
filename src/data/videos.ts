@@ -1,5 +1,12 @@
 const videos: Video[] = [
   {
+    id: "yt:video:jCw0Tf0JHTw",
+    title: "Appwrite Explained: Complete Backend-as-a-Service Tutorial (Auth, Database, Functions & More)",
+    summary: "Comprehensive overview of Appwrite's Backend-as-a-Service, covering authentication, database, cloud functions, and common use cases.",
+    tags: ["Backend", "Tutorial", "Web Development", "Appwrite"],
+    date: "2025-11-13",
+  },
+  {
     id: "8BW1UVYofAc",
     title: "Building Desktop Apps with C++ & WebView: 48KB Binary, Instant",
     summary: "Build truly minimal cross-platform desktop applications with C++ and native system WebView components—no bloated browser engines required.",
