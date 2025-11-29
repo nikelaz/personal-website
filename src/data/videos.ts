@@ -1,6 +1,6 @@
 const videos: Video[] = [
   {
-    id: "yt:video:jCw0Tf0JHTw",
+    id: "jCw0Tf0JHTw",
     title: "Appwrite Explained: Complete Backend-as-a-Service Tutorial (Auth, Database, Functions & More)",
     summary: "Comprehensive overview of Appwrite's Backend-as-a-Service, covering authentication, database, cloud functions, and common use cases.",
     tags: ["Backend", "Tutorial", "Web Development", "Appwrite"],
