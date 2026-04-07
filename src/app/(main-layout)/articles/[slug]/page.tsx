@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import IconDate from "@/assets/icons/date.svg";
 import IconUser from "@/assets/icons/user.svg";
 import articles from "@/data/articles";
+import videos from "@/data/videos";
 
 export const generateStaticParams = async () => {
   return articles.map((article) => ({
@@ -87,6 +88,21 @@ const Article = async (props: ArticleProps) => {
     "inLanguage": "en-US"
   };
 
+  const relatedVideo = article.relatedVideoId
+    ? videos.find((v) => v.id === article.relatedVideoId)
+    : undefined;
+
+  const videoStructuredData = relatedVideo ? {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": relatedVideo.title,
+    "description": relatedVideo.summary,
+    "thumbnailUrl": `https://i3.ytimg.com/vi/${relatedVideo.id}/maxresdefault.jpg`,
+    "uploadDate": relatedVideo.date,
+    "embedUrl": `https://www.youtube.com/embed/${relatedVideo.id}`,
+    "url": `https://youtu.be/${relatedVideo.id}`,
+  } : undefined;
+
   return (
     <>
       <script
@@ -95,6 +111,14 @@ const Article = async (props: ArticleProps) => {
           __html: JSON.stringify(structuredData)
         }}
       />
+      {videoStructuredData ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(videoStructuredData)
+          }}
+        />
+      ) : null}
       <h1>{article.title}</h1>
 
       <div className="flex items-center gap-8 text-sm text-neutral-600 dark:text-neutral-300 mb-4">
@@ -106,7 +130,33 @@ const Article = async (props: ArticleProps) => {
         </IconTag>
       </div>
 
-      <div className="flex flex-col gap-6" dangerouslySetInnerHTML={{ __html: article.html }} />
+      {(() => {
+        if (!article.relatedVideoId) {
+          return <div className="flex flex-col gap-6" dangerouslySetInnerHTML={{ __html: article.html }} />;
+        }
+        const secondH2 = article.html.indexOf('<h2>', article.html.indexOf('<h2>') + 1);
+        const before = secondH2 === -1 ? article.html : article.html.slice(0, secondH2);
+        const after = secondH2 === -1 ? '' : article.html.slice(secondH2);
+        return (
+          <>
+            <div className="flex flex-col gap-6" dangerouslySetInnerHTML={{ __html: before }} />
+            <div className="flex flex-col gap-3">
+              <h2>Watch the Video</h2>
+              <p>This article is also available as a video on my <a href="https://www.youtube.com/@nltech1" target="_blank" rel="noopener">YouTube channel</a> if you prefer that format.</p>
+              <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                <iframe
+                  className="absolute inset-0 w-full h-full rounded-lg"
+                  src={`https://www.youtube.com/embed/${article.relatedVideoId}`}
+                  title="Related video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+            <div className="flex flex-col gap-6" dangerouslySetInnerHTML={{ __html: after }} />
+          </>
+        );
+      })()}
 
       <References>
         {article.references?.map((reference, index) => (

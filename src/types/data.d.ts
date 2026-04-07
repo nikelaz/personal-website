@@ -25,4 +25,5 @@ type Article = {
   author: string;
   references?: Reference[];
   ogImage?: string;
+  relatedVideoId?: string;
 };
