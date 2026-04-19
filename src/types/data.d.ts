@@ -27,3 +27,19 @@ type Article = {
   ogImage?: string;
   relatedVideoId?: string;
 };
+
+type Skill = {
+  slug: string;
+  title: string;
+  summary: string;
+  description: string;
+  isPublic?: boolean;
+  category: string;
+  tags: string[];
+  githubUrl: string;
+  downloadPath: string;
+  overview: string[];
+  exampleQueries: string[];
+  bestFor: string[];
+  outcomes: string[];
+};

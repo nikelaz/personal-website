@@ -5,7 +5,8 @@ type ButtonProps = Readonly<{
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   icon?: 'arrow';
   disabled?: boolean;
-}> & ChildrenProps & ClassNameProps;
+  variant?: 'secondary';
+}> & ChildrenProps & ClassNameProps & Pick<React.AnchorHTMLAttributes<HTMLAnchorElement>, "download" | "target" | "rel">;
 
 const Button = (props: ButtonProps) => {
   const Component = props.href ? "a" : "button";
@@ -15,6 +16,9 @@ const Button = (props: ButtonProps) => {
       className={clsx("button", props.icon === "arrow" && "button__arrow", props.disabled && "button__disabled", props.variant === "secondary" && "button__secondary", props.className)}
       href={props.href}
       onClick={props.onClick}
+      download={props.download}
+      target={props.target}
+      rel={props.rel}
       aria-disabled={props.disabled}
     >
       {props.children}

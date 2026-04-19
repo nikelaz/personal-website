@@ -13,6 +13,7 @@ const Nav = (props: NavProps) => {
       >
         <Link href="/" className="nav-item">Home</Link>
         <Link href="/about-me" className="nav-item">About Me</Link>
+        <Link href="/skills" className="nav-item">Agent Skills</Link>
         <Link href="/videos" className="nav-item">Videos</Link>
         <Link href="/articles" className="nav-item">Articles</Link>
         {/*<Link href="/" className="nav-item">Projects</Link>*/}
