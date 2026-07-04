@@ -1,5 +1,26 @@
 const videos: Video[] = [
   {
+    id: "JhDRDa6193A",
+    title: "I Built a Native macOS App with SwiftUI - Here's What I Learned",
+    summary: "A practical look at building Budget Warden as a native macOS app with Swift and SwiftUI, covering language design, error handling, concurrency, state, and app architecture.",
+    tags: ["Swift", "macOS"],
+    date: "2026-06-03",
+  },
+  {
+    id: "OsGMrC4fzf4",
+    title: "AI-Generated Apps Are Useless - Coding Is Not the Problem",
+    summary: "Explains why information systems fail before implementation, and why analysis, process modeling, and design matter more than generating code with AI.",
+    tags: ["Artificial Intelligence", "Software Engineering"],
+    date: "2026-05-30",
+  },
+  {
+    id: "vY2_W2Ni-dw",
+    title: "I'm Turning My Budget App Into Local-First Native Software",
+    summary: "Walks through the decision to rebuild Budget Warden as local-first native software with user-controlled files, simpler architecture, and a one-time payment model.",
+    tags: ["Budget Warden", "Software Architecture"],
+    date: "2026-05-02",
+  },
+  {
     id: "ypktibw0Zjw",
     title: "Unblock Nvidia Performance on Mutter/Gnome - Code Review",
     summary: "GNOME 50 shipped a meaningful performance fix for Nvidia users through a pull request making Mutter's compositor non-blocking via file descriptors and GLib event sources.",
