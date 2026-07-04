@@ -109,21 +109,21 @@ const AboutMe = () => {
 
       <div className="col-span-12 sm:col-span-7 lg:col-start-5 lg:col-span-6 flex flex-col gap-4">
         <h1 className="mb-3">About Me</h1>
-        <p>Hey there! I&apos;m Nikola Lazarov, a full-stack developer from Sofia, Bulgaria. I love building things – whether it&apos;s web applications, YouTube videos, or meticulously crafted coding projects that solve real problems.</p>
+        <p>Hey there! I&apos;m Nikola Lazarov, a full-stack developer from Sofia, Bulgaria. I love building things - native applications, servers, web applications, YouTube videos, or coding projects that attempt to solve real problems.</p>
         <h2>What I Do</h2>
-        <p>I&apos;m a Senior Front-End Developer at Progress, where I&apos;ve been working since 2020 (started as an intern back in 2018). It&apos;s been quite the journey watching web development evolve and getting to be part of that evolution.</p>
+        <p>I&apos;m a Senior Front-End Developer at Progress, where I&apos;ve been working since 2020 (started as an intern back in 2018). It&apos;s been quite the journey doing web development at enterprise scale.</p>
         <p>I also founded Budget Warden where I build financial tools because, honestly, managing money shouldn&apos;t be as painful as it usually is.</p>
         <h2>Content Creation</h2>
         <p>I make YouTube videos about programming because I genuinely enjoy breaking down complex stuff into digestible pieces. Theres something satisfying about that &quot;aha!&quot; moment when someone finally gets a concept that seemed impossible five minutes earlier.</p>
-        <p>I also write technical articles on topics like REST API design, JavaScript features, and data structures. Not because I think Im the authority on these subjects, but because writing helps me understand things better – and maybe it helps others too.</p>
+        <p>I also write technical articles on topics like native software development, REST API design, JavaScript features, and data structures. Not because I think I am an authority on these subjects, but because writing helps me understand things better - and maybe it helps others too.</p>
         <h2>Background</h2>
         <p>I hold a Bachelor&apos;s degree in Computer Science & Information Systems from the American University in Bulgaria, where I built a strong foundation in software engineering principles and problem-solving methodologies.</p>
         <h2>Side Projects</h2>
-        <p>Beyond my professional work, I dedicate significant time to personal coding projects where I focus on building high-quality software solutions. These projects allow me to explore new technologies, experiment with different architectural patterns, and create tools that I find genuinely useful or interesting.</p>
+        <p>Beyond my professional work, I dedicate significant time to personal coding projects where I focus on building software. These projects allow me to explore new technologies, experiment with different architectural patterns, and create tools that I find genuinely useful or interesting.</p>
         <p>I approach these projects with the same rigor and attention to detail that I bring to my professional work. Each one is an opportunity to push my skills further and build something I&apos;m truly proud of.</p>
         <h2>Hobbies & Interests</h2>
-        <p>When I&apos;m not coding, I enjoy fitness and swimming to maintain balance in my routine. I&apos;m also fascinated by industrial design and engineering – I love studying well-designed products and elegant engineering solutions.</p>
-        <p>I&apos;m always excited to connect with fellow developers, collaborate on interesting projects, or discuss the latest trends in technology. Feel free to reach out through any of my channels!</p>
+        <p>Outside of work I enjoy fitness and swimming to maintain balance in my routine. I&apos;m also fascinated by industrial design and engineering – I love studying well-designed products and elegant engineering solutions. I love looking at craftsmanship and art produced by humans in many forms, primarily movies, novels, music, architecture and paintings.</p>
+        <p>I&apos;m always excited to connect with fellow developers, collaborate on interesting projects, learn from them or discuss the latest developments and interesteing ideas in technology. Feel free to reach out through any of my channels!</p>
       </div>
     </Container>
   );

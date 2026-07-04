@@ -1,6 +1,5 @@
 import { MetadataRoute } from 'next'
 import articles from '@/data/articles'
-import { publicSkills } from '@/data/skills'
 
 // Add this export to force static generation
 export const dynamic = 'force-static'
@@ -24,12 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/articles`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/skills`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.8,
@@ -61,13 +54,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
-
-  const skillPages = publicSkills.map((skill) => ({
-    url: `${baseUrl}/skills/${skill.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }))
   
-  return [...staticPages, ...articlePages, ...skillPages]
+  return [...staticPages, ...articlePages]
 }

@@ -57,7 +57,7 @@ export const metadata: Metadata = {
 
 const RootLayout = (props: ChildrenProps) => {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body
         className={`${fontLora.variable} ${fontIBMPlexSans.className} antialiased`}
       >
