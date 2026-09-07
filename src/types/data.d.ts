@@ -27,3 +27,45 @@ type Article = {
   ogImage?: string;
   relatedVideoId?: string;
 };
+
+type ProjectCategory =
+  | "Native"
+  | "Linux"
+  | "Systems"
+  | "Rust"
+  | "C++"
+  | "Graphics"
+  | "Libraries"
+  | "Developer Tools"
+  | "Distributed Systems"
+  | "AI Infrastructure"
+  | "PHP";
+
+type ProjectScreenshot = {
+  src: string;
+  alt: string;
+};
+
+type ProjectSection = {
+  heading: string;
+  body: string[];
+};
+
+type Project = {
+  slug: string;
+  name: string;
+  shortDescription: string;
+  categories: ProjectCategory[];
+  technologies: string[];
+  repositoryUrl: string;
+  homepageUrl?: string;
+  downloadUrl?: string;
+  heroImage: ProjectScreenshot;
+  screenshots: ProjectScreenshot[];
+  featured: boolean;
+  story: string;
+  sections?: ProjectSection[];
+  relatedArticles?: string[];
+  relatedVideos?: string[];
+  ogImage?: string;
+};
