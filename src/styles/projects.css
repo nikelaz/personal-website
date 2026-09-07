@@ -1,0 +1,11 @@
+@reference "tailwindcss";
+
+@layer components {
+  .project {
+    @apply text-neutral-900 dark:text-neutral-100;
+  }
+
+  .project code {
+    @apply text-sm;
+  }
+}

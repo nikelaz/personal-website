@@ -14,8 +14,8 @@ const Nav = (props: NavProps) => {
         <Link href="/" className="nav-item">Home</Link>
         <Link href="/about-me" className="nav-item">About Me</Link>
         <Link href="/videos" className="nav-item">Videos</Link>
+        <Link href="/projects" className="nav-item">Projects</Link>
         <Link href="/articles" className="nav-item">Articles</Link>
-        {/*<Link href="/" className="nav-item">Projects</Link>*/}
         <a href="mailto:nikola.n.lazarov@outlook.com" className="nav-item">Contact Me</a>
       </div>
     </nav>
