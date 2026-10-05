@@ -63,7 +63,6 @@ type Project = {
   heroImage: ProjectScreenshot;
   screenshots: ProjectScreenshot[];
   featured: boolean;
-  story: string;
   sections?: ProjectSection[];
   relatedArticles?: string[];
   relatedVideos?: string[];

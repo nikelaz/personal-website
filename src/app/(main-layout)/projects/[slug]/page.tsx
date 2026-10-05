@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import ProjectGallery from "@/components/project-gallery";
 import Tag from "@/components/tag";
 import Button from "@/components/button";
-import Container from "@/components/container";
 import Card from "@/components/card";
 import projects, { getProject } from "@/data/projects";
 import articles from "@/data/articles";
@@ -44,6 +43,41 @@ const seoTitle = (project: Project) => {
 
 const seoDescription = (project: Project) => {
   return `${project.name} is ${project.shortDescription.charAt(0).toLowerCase()}${project.shortDescription.slice(1)} Built with ${project.technologies.join(", ")}.`;
+};
+
+const renderDescriptionText = (text: string) => {
+  const linkPattern = /\[([^\]]+)\]\(([^)\s]+)\)/g;
+  const parts = [];
+  let lastIndex = 0;
+  let match = linkPattern.exec(text);
+
+  while (match) {
+    const [, label, href] = match;
+    const isExternal = href.startsWith("https://") || href.startsWith("http://");
+    const isInternal = href.startsWith("/") && !href.startsWith("//");
+
+    if (!isExternal && !isInternal) {
+      match = linkPattern.exec(text);
+      continue;
+    }
+
+    parts.push(text.slice(lastIndex, match.index));
+    parts.push(
+      <a
+        key={`${match.index}-${href}`}
+        href={href}
+        className="underline underline-offset-2"
+        {...(isExternal ? { target: "_blank", rel: "noopener" } : {})}
+      >
+        {label}
+      </a>,
+    );
+    lastIndex = linkPattern.lastIndex;
+    match = linkPattern.exec(text);
+  }
+
+  parts.push(text.slice(lastIndex));
+  return parts;
 };
 
 export const generateMetadata = async (props: ProjectPageProps): Promise<Metadata> => {
@@ -132,7 +166,7 @@ const ProjectPage = async (props: ProjectPageProps) => {
       />
       <header className="flex flex-col gap-4">
         <h1 className="mb-0">{project.name}</h1>
-        <p className="text-lg">{project.shortDescription}</p>
+        <p className="text-lg">{renderDescriptionText(project.shortDescription)}</p>
         <div className="flex items-center gap-2 flex-wrap">
           {project.technologies.map((technology) => (
             <Tag key={technology}>{technology}</Tag>
@@ -151,15 +185,11 @@ const ProjectPage = async (props: ProjectPageProps) => {
 
 <ProjectGallery name={project.name} screenshots={project.screenshots} />
 
-      <section className="border-l-2 border-neutral-300/50 dark:border-neutral-700/50 pl-4">
-        <p>{project.story}</p>
-      </section>
-
       {project.sections?.map((section) => (
         <section key={section.heading} className="flex flex-col gap-4">
           <h2 className="mb-0">{section.heading}</h2>
           {section.body.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
+            <p key={index}>{renderDescriptionText(paragraph)}</p>
           ))}
         </section>
       ))}
@@ -167,41 +197,37 @@ const ProjectPage = async (props: ProjectPageProps) => {
       {relatedArticles.length || relatedVideos.length ? (
         <section className="flex flex-col gap-4">
           <h2 className="mb-0">Related Articles & Videos</h2>
-          {relatedArticles.length ? (
-            <Container className="px-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {relatedArticles.map((article) => (
-                  <Card key={article.slug}>
-                    <Card.Content>
-                      <div className="flex items-center gap-2 flex-wrap">
-                        {article.tags.map((tag) => (
-                          <Tag key={tag}>{tag}</Tag>
-                        ))}
-                      </div>
-                      <Card.Link href={`/articles/${article.slug}`}>{article.title}</Card.Link>
-                      <p>{article.summary}</p>
-                    </Card.Content>
-                  </Card>
-                ))}
-              </div>
-            </Container>
-          ) : null}
-          {relatedVideos.length ? (
-            <div className="flex flex-col gap-3">
-              {relatedVideos.map((video) => (
-                <div key={video.id} className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                  <iframe
-                    className="absolute inset-0 w-full h-full rounded-lg"
-                    src={`https://www.youtube.com/embed/${video.id}`}
-                    title={`${video.title} video`}
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              ))}
-            </div>
-          ) : null}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {relatedArticles.map((article) => (
+              <Card key={article.slug}>
+                <Card.Content>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    {article.tags.map((tag) => (
+                      <Tag key={tag}>{tag}</Tag>
+                    ))}
+                  </div>
+                  <Card.Link href={`/articles/${article.slug}`}>{article.title}</Card.Link>
+                  <p>{article.summary}</p>
+                </Card.Content>
+              </Card>
+            ))}
+            {relatedVideos.map((video) => (
+              <Card key={video.id}>
+                <Card.Image src={`https://i3.ytimg.com/vi/${video.id}/maxresdefault.jpg`} alt={`${video.title} video thumbnail`} />
+                <Card.Content>
+                  {video.tags ? (
+                    <div className="flex items-center gap-2 flex-wrap">
+                      {video.tags.map((tag) => (
+                        <Tag key={tag}>{tag}</Tag>
+                      ))}
+                    </div>
+                  ) : null}
+                  <Card.Link href={`https://youtu.be/${video.id}`} target="_blank" rel="noopener">{video.title}</Card.Link>
+                  <p>{video.summary}</p>
+                </Card.Content>
+              </Card>
+            ))}
+          </div>
         </section>
       ) : null}
     </>

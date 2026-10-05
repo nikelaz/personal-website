@@ -1,5 +1,12 @@
 const videos: Video[] = [
   {
+    id: "NiMszeCHEcs",
+    title: "Debugging C with RAD Debugger and Visual Studio",
+    summary: "Debug a crashing C program on Windows using RAD Debugger and Visual Studio.",
+    tags: ["C/C++", "Debugging", "Windows"],
+    date: "2026-10-03",
+  },
+  {
     id: "__WG3mXxd1Q",
     title: "Qt - Quietly Powering UIs Everywhere for Over 30 Years",
     summary: "Explores Qt's long history, its role in KDE and the wider software ecosystem, and how it powers desktop, embedded, automotive, medical, and industrial interfaces.",
