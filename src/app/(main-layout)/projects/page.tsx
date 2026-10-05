@@ -5,17 +5,17 @@ import projects from "@/data/projects";
 
 export const metadata: Metadata = {
   title: { absolute: "Projects | Nikola Lazarov" },
-  description: "Open-source projects by Nikola Lazarov: native Linux applications in C++ and Rust, systems software, graphics tools, and developer libraries. Machina, CTL Dash, Budget Warden, CSS Structs, ESVG, Retrieval Kit and more.",
+  description: "Software projects by Nikola Lazarov, including native desktop apps, systems software, audio tools, graphics tools, and developer libraries.",
   openGraph: {
     title: "Projects | Nikola Lazarov",
-    description: "Open-source projects by Nikola Lazarov: native Linux applications in C++ and Rust, systems software, graphics tools, and developer libraries.",
+    description: "Software projects by Nikola Lazarov, including native desktop apps, systems software, audio tools, graphics tools, and developer libraries.",
     type: "website",
     url: "https://nikolalazarov.com/projects",
   },
   twitter: {
     card: "summary",
     title: "Projects | Nikola Lazarov",
-    description: "Open-source projects by Nikola Lazarov: native Linux applications in C++ and Rust, systems software, graphics tools, and developer libraries.",
+    description: "Software projects by Nikola Lazarov, including native desktop apps, systems software, audio tools, graphics tools, and developer libraries.",
     creator: "@nikelaz",
   },
   alternates: {

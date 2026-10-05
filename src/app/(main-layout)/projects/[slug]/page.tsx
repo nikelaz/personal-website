@@ -36,6 +36,10 @@ const seoTitle = (project: Project) => {
       return "ESVG — Experimental SVG Optimizer in Rust";
     case "retrieval-kit":
       return "Retrieval Kit — Local Vector Search Library for Rust";
+    case "voice-ready":
+      return "Voice Ready - Spoken Audio Processing App";
+    case "zenith":
+      return "Zenith - Native LLM Harness Orchestrator";
     default:
       return project.name;
   }
@@ -152,7 +156,7 @@ const ProjectPage = async (props: ProjectPageProps) => {
       "url": "https://nikolalazarov.com"
     },
     "url": `https://nikolalazarov.com/projects/${project.slug}`,
-    "sameAs": [project.repositoryUrl],
+    "sameAs": project.repositoryUrl ? [project.repositoryUrl] : project.homepageUrl ? [project.homepageUrl] : [],
     "keywords": [...project.technologies, ...project.categories],
   };
 
@@ -173,7 +177,9 @@ const ProjectPage = async (props: ProjectPageProps) => {
           ))}
         </div>
         <div className="flex items-center gap-3 flex-wrap">
-          <Button href={project.repositoryUrl} target="_blank" rel="noopener">View on GitHub ↗</Button>
+          {project.repositoryUrl ? (
+            <Button href={project.repositoryUrl} target="_blank" rel="noopener">View on GitHub ↗</Button>
+          ) : null}
           {project.homepageUrl ? (
             <Button href={project.homepageUrl} target="_blank" rel="noopener" variant="secondary">Website ↗</Button>
           ) : null}

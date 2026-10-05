@@ -57,7 +57,7 @@ type Project = {
   shortDescription: string;
   categories: ProjectCategory[];
   technologies: string[];
-  repositoryUrl: string;
+  repositoryUrl?: string;
   homepageUrl?: string;
   downloadUrl?: string;
   heroImage: ProjectScreenshot;

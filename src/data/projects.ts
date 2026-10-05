@@ -4,11 +4,15 @@ import budgetWarden from "./projects/budget-warden";
 import cssStructs from "./projects/css-structs";
 import esvg from "./projects/esvg";
 import retrievalKit from "./projects/retrieval-kit";
+import voiceReady from "./projects/voice-ready";
+import zenith from "./projects/zenith";
 
 const projects: Project[] = [
   machina,
   ctldash,
   budgetWarden,
+  zenith,
+  voiceReady,
   cssStructs,
   esvg,
   retrievalKit,
